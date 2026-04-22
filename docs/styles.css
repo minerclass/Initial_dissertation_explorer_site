@@ -1,0 +1,45 @@
+html {
+  background: #0f1117;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: radial-gradient(circle at top, rgba(201, 168, 124, 0.08), transparent 35%), #0f1117;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.hoverable-card:hover,
+.hoverable-card:focus-visible {
+  background-color: #1e2230 !important;
+  border-color: #3d4258 !important;
+}
+
+.tab-button:hover,
+.tab-button:focus-visible {
+  color: #e8e9ed !important;
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  body {
+    background: #0f1117;
+  }
+}
