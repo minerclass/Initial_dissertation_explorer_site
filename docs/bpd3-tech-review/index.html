@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BPD3 Technology Department Review for August 2024 through April 2026.">
+  <title>BPD3 Technology Department Review: August 2024 - April 2026</title>
+  <style>
+    :root {
+      --navy: #0b2b5e;
+      --teal: #147b86;
+      --slate: #343a40;
+      --paper: #ffffff;
+      --page: #e9eef2;
+      --panel-blue: #f0f7fa;
+      --panel-gray: #f7f8fa;
+      --border: #bdd4e1;
+      --warning: #b45309;
+      --risk: #b42318;
+      --text: #1f2933;
+      --muted: #52606d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    main {
+      width: min(100% - 2rem, 1040px);
+      margin: 2rem auto;
+      background: var(--paper);
+      border-radius: 8px;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
+      overflow: hidden;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2rem;
+      border-bottom: 6px double var(--border);
+    }
+
+    .hero-mark,
+    .section-icon,
+    .item-icon,
+    .footer-mark {
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      font-weight: 800;
+    }
+
+    .hero-mark {
+      width: 6rem;
+      height: 6rem;
+      border: 4px solid var(--navy);
+      color: var(--navy);
+      font-size: 2.35rem;
+      letter-spacing: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      color: var(--navy);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      color: var(--teal);
+      font-size: clamp(1rem, 2.5vw, 1.45rem);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      margin-top: 0.6rem;
+      text-transform: uppercase;
+    }
+
+    .section {
+      margin: 1.25rem;
+      border: 2px solid var(--section-color);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--section-bg);
+    }
+
+    .section.wins {
+      --section-color: var(--navy);
+      --section-bg: var(--panel-blue);
+    }
+
+    .section.challenges {
+      --section-color: var(--slate);
+      --section-bg: var(--panel-gray);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.85rem 1.25rem;
+      background: var(--section-color);
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .section-icon {
+      width: 2rem;
+      height: 2rem;
+      border: 2px solid rgba(255, 255, 255, 0.82);
+      font-size: 0.95rem;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.1rem, 3vw, 1.45rem);
+      letter-spacing: 0;
+    }
+
+    .review-item {
+      display: grid;
+      grid-template-columns: 5rem minmax(0, 1fr) minmax(13rem, 15rem);
+      gap: 1.25rem;
+      padding: 1.45rem 1.25rem;
+      border-top: 2px solid var(--border);
+    }
+
+    .review-item:first-of-type {
+      border-top: 0;
+    }
+
+    .item-icon {
+      width: 4rem;
+      height: 4rem;
+      align-self: start;
+      border: 3px solid var(--section-color);
+      color: var(--section-color);
+      font-size: 1.2rem;
+    }
+
+    h3 {
+      color: var(--section-color);
+      font-size: 1.22rem;
+      line-height: 1.25;
+      margin-bottom: 0.65rem;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+
+    li {
+      margin-bottom: 0.55rem;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: #111827;
+    }
+
+    .metric-list {
+      display: grid;
+      align-content: center;
+      gap: 0.7rem;
+    }
+
+    .metric {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 0.75rem;
+      min-height: 3.75rem;
+      padding: 0.7rem 0.85rem;
+      border-radius: 8px;
+      background: var(--teal);
+      color: #ffffff;
+      font-weight: 800;
+      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.12);
+    }
+
+    .metric.neutral {
+      background: #e5e7eb;
+      color: #1f2937;
+      border: 1px solid #d1d5db;
+    }
+
+    .metric.warning {
+      background: #fff7ed;
+      color: #7c2d12;
+      border: 1px solid #fed7aa;
+    }
+
+    .metric.risk {
+      background: #fef2f2;
+      color: #7f1d1d;
+      border: 1px solid #fecaca;
+    }
+
+    .metric-symbol {
+      display: inline-grid;
+      place-items: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.22);
+      font-size: 0.9rem;
+    }
+
+    .metric.neutral .metric-symbol,
+    .metric.warning .metric-symbol,
+    .metric.risk .metric-symbol {
+      background: rgba(15, 23, 42, 0.08);
+    }
+
+    .metric small {
+      display: block;
+      color: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      line-height: 1.2;
+      opacity: 0.88;
+    }
+
+    .critical {
+      color: var(--risk);
+      font-weight: 800;
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.35rem 2rem;
+      background: var(--navy);
+      color: #ffffff;
+    }
+
+    .footer-mark {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: #ffffff;
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .story-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .story p {
+      font-weight: 600;
+    }
+
+    @media (max-width: 820px) {
+      main {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        padding: 1.5rem 1rem;
+      }
+
+      .section {
+        margin: 1rem;
+      }
+
+      .review-item {
+        grid-template-columns: 1fr;
+      }
+
+      .item-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+
+      .metric-list {
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+      }
+
+      .story {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        padding: 1.25rem;
+      }
+
+      .story-title {
+        white-space: normal;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      main {
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .section,
+      .review-item {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main aria-labelledby="page-title">
+    <header class="hero">
+      <div class="hero-mark" aria-hidden="true">TR</div>
+      <div>
+        <h1 id="page-title">Technology Department Review</h1>
+        <p class="subtitle">August 2024 &ndash; April 2026</p>
+      </div>
+    </header>
+
+    <section class="section wins" aria-labelledby="wins-title">
+      <header class="section-heading">
+        <span class="section-icon" aria-hidden="true">1</span>
+        <h2 id="wins-title">Major Wins and Gains</h2>
+      </header>
+
+      <article class="review-item">
+        <div class="item-icon" aria-hidden="true">SEC</div>
+        <div>
+          <h3>1.1 Cybersecurity, Governance, and Data Privacy</h3>
+          <ul>
+            <li><strong>Security posture transformation:</strong> Google security score improved from 73% to 92%; Microsoft Secure Score maintained at 94%. LDAP signing was deployed, and RC4/DES was disabled on domain controllers.</li>
+            <li><strong>National recognition:</strong> Earned the CoSN Trusted Learning Environment (TLE) Mini-Seal for Leadership; TLE Business Mini-Seal application submitted.</li>
+            <li><strong>Funding secured:</strong> FCC Cybersecurity Pilot funding awarded at $27,500 per year for 3 years, supporting Sophos and SHI MDR/XDR and Check Point Harmony email security.</li>
+            <li><strong>Staff training and MFA rollout:</strong> District-wide MFA implemented by early 2025; Cybernut phishing awareness and cybersecurity training launched.</li>
+          </ul>
+        </div>
+        <div class="metric-list" aria-label="Cybersecurity metrics">
+          <div class="metric"><span class="metric-symbol">UP</span><span>73% &rarr; 92%</span></div>
+          <div class="metric"><span class="metric-symbol">MS</span><span>94% <small>Secure Score</small></span></div>
+          <div class="metric"><span class="metric-symbol">$</span><span>$27,500/year <small>x 3 years</small></span></div>
+        </div>
+      </article>
+
+      <article class="review-item">
+        <div class="item-icon" aria-hidden="true">NET</div>
+        <div>
+          <h3>1.2 Network Infrastructure and Security</h3>
+          <ul>
+            <li><strong>10GB backbone upgrades:</strong> Major E-Rate Cat6 and fiber upgrades completed at Kenneth Murphy, Newport, and the District Office; Howe Elementary is scheduled for Summer 2026.</li>
+            <li><strong>Firewall and filtering upgrades:</strong> Upgraded to Fortigate 401F and migrated filtering from Lightspeed Relay to Linewize (Qoria).</li>
+            <li><strong>Bandwidth recovery:</strong> Student YouTube restrictions reclaimed more than 32% of network capacity for instructional tools such as i-Ready.</li>
+            <li><strong>Physical security enhancements:</strong> Raptor self-check-in kiosks installed, unified staff ID/FOB badges rolled out, IP-based Valcom paging updated, and vape detectors piloted at the middle school.</li>
+          </ul>
+        </div>
+        <div class="metric-list" aria-label="Network metrics">
+          <div class="metric"><span class="metric-symbol">10G</span><span>10GB <small>backbone upgrades</small></span></div>
+          <div class="metric"><span class="metric-symbol">32</span><span>32% <small>bandwidth recovered</small></span></div>
+        </div>
+      </article>
+
+      <article class="review-item">
+        <div class="item-icon" aria-hidden="true">CLS</div>
+        <div>
+          <h3>1.3 Classroom Innovation and Asset Management</h3>
+          <ul>
+            <li><strong>Classroom modernization:</strong> 40+ Newline Q-Series/Q Pro interactive displays and 60+ Vivi wireless screen mirroring devices deployed, replacing outdated Epson projectors.</li>
+            <li><strong>1:1 device deployment and recovery:</strong> 2,100 student Chromebooks and 275 teacher laptops deployed for 2025&ndash;2026; Senturo added for geolocation and remote locking to recover lost devices.</li>
+            <li><strong>Interactive learning environments:</strong> L&uuml; System installed in the Howe Elementary and Kenneth Murphy gyms.</li>
+            <li><strong>AI integration:</strong> MagicSchool AI and Google Gemini licenses rolled out for teachers and administrators.</li>
+          </ul>
+        </div>
+        <div class="metric-list" aria-label="Classroom technology metrics">
+          <div class="metric"><span class="metric-symbol">40+</span><span>Displays</span></div>
+          <div class="metric"><span class="metric-symbol">60+</span><span>Vivi devices</span></div>
+          <div class="metric"><span class="metric-symbol">2.1k</span><span>Chromebooks</span></div>
+          <div class="metric"><span class="metric-symbol">275</span><span>Teacher laptops</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section challenges" aria-labelledby="challenges-title">
+      <header class="section-heading">
+        <span class="section-icon" aria-hidden="true">2</span>
+        <h2 id="challenges-title">Notable Challenges</h2>
+      </header>
+
+      <article class="review-item">
+        <div class="item-icon" aria-hidden="true">RISK</div>
+        <div>
+          <h3>2.1 External Vendor Breaches and Software Disruptions</h3>
+          <ul>
+            <li><strong>PowerSchool data breach (Dec. 2024 / Jan. 2025):</strong> Managed communications and community response after the third-party breach; coordinated with neighboring districts to provide credit monitoring to affected families.</li>
+            <li><strong>Lightspeed agent outage (Oct. 2025):</strong> Residual software from decommissioned Lightspeed servers blocked internet access on devices, requiring urgent policy updates and agent removal.</li>
+          </ul>
+        </div>
+        <div class="metric-list" aria-label="Vendor risk metric">
+          <div class="metric risk"><span class="metric-symbol">!</span><span>Vendor risks</span></div>
+        </div>
+      </article>
+
+      <article class="review-item">
+        <div class="item-icon" aria-hidden="true">AUD</div>
+        <div>
+          <h3>2.2 Audit Findings and Documentation Gaps</h3>
+          <ul>
+            <li><strong>Secure Halo cybersecurity review (Nov. 2025):</strong> Overall Grade C (73%), above peer average, but Grade D gaps identified in Data Recovery, Data Protection, and Vulnerability Management.</li>
+            <li><strong>Response:</strong> Prioritized formal Incident Response Plan updates and established a data recovery testing schedule.</li>
+          </ul>
+        </div>
+        <div class="metric-list" aria-label="Audit metric">
+          <div class="metric warning"><span class="metric-symbol">C</span><span>Grade C (73%) <small><span class="critical">Critical gaps: Grade D</span></small></span></div>
+        </div>
+      </article>
+
+      <article class="review-item">
+        <div class="item-icon" aria-hidden="true">HW</div>
+        <div>
+          <h3>2.3 Rising Hardware Costs and Physical Infrastructure Limits</h3>
+          <ul>
+            <li><strong>Fiscal sustainability of 1:1 devices:</strong> Rising Chromebook costs made the 3-year refresh cycle unsustainable, leading to a shift from a K/3/6 cycle to a K/6 cycle to maximize the 8-year Auto-Update Expiration (AUE).</li>
+            <li><strong>Legacy cabling and structural hurdles:</strong> Broken conduits delayed the Oak Crest Bus Depot camera project, and cabling limitations at Howe Elementary restricted the south hall to 1GB instead of 10GB.</li>
+          </ul>
+        </div>
+        <div class="metric-list" aria-label="Hardware sustainability metrics">
+          <div class="metric neutral"><span class="metric-symbol">K</span><span>K/3/6 &rarr; K/6</span></div>
+          <div class="metric neutral"><span class="metric-symbol">8</span><span>8-year AUE</span></div>
+        </div>
+      </article>
+    </section>
+
+    <footer class="story">
+      <div class="footer-mark" aria-hidden="true">*</div>
+      <div class="story-title">Overall Story</div>
+      <p>A period of major growth in cybersecurity, infrastructure, classroom modernization, and instructional technology, alongside important lessons in vendor risk, documentation, fiscal sustainability, and legacy infrastructure limitations.</p>
+    </footer>
+  </main>
+</body>
+</html>
